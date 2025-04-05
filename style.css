@@ -3,12 +3,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #111;
+    background: #111;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    color: white;
 }
 
 /* Ecran de chargement */
@@ -21,76 +22,95 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(45deg, #ff0044, #ffcc00, #66ccff, #33cc33);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
     z-index: 9999;
     overflow: hidden;
 }
 
-.loader {
+.loader-content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    color: white;
+}
+
+/* Animation dégradé de fond */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animation des cercles */
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    border-top: 10px solid #ff0044;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Animation des boîtes */
 .box {
     width: 50px;
     height: 50px;
-    margin: 10px;
-    background-color: #4CAF50;
+    margin: 15px;
+    background-color: #FF9800;
     animation: bounce 1.5s infinite ease-in-out;
+    border-radius: 10px;
 }
 
 /* Animation des différentes boîtes */
-.box1 {
-    animation-delay: 0s;
-}
+.box1 { animation-delay: 0s; }
+.box2 { animation-delay: 0.3s; }
+.box3 { animation-delay: 0.6s; }
+.box4 { animation-delay: 0.9s; }
 
-.box2 {
-    animation-delay: 0.3s;
-}
-
-.box3 {
-    animation-delay: 0.6s;
-}
-
-.box4 {
-    animation-delay: 0.9s;
-}
-
-/* Animation de rebond des boîtes */
+/* Animation des boîtes qui rebondissent */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
-        background-color: #4CAF50;
+        background-color: #FF9800;
     }
     50% {
         transform: translateY(-30px);
-        background-color: #FF9800;
+        background-color: #66ccff;
     }
 }
 
-/* Texte de chargement */
+/* Texte de chargement avec effet d'écriture */
 .loading-text {
     font-size: 20px;
+    font-weight: bold;
     margin-top: 20px;
-    animation: fadeIn 2s infinite alternate;
+    color: white;
+    letter-spacing: 1px;
+    animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
-/* Animation du texte "Chargement..." */
-@keyframes fadeIn {
-    0% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
+/* Effet de machine à écrire */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 25em; }
 }
 
-/* Contenu principal (réseau social) */
+/* Effet de clignotement */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Contenu principal après le chargement */
 #main-content {
     display: flex;
     justify-content: center;
@@ -101,7 +121,7 @@ body {
     color: #fff;
 }
 
-/* Contenu principal après le chargement */
+/* Contenu du réseau social */
 h1 {
     font-size: 32px;
     color: #FF9800;
