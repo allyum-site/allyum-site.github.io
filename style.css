@@ -3,12 +3,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #111;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
     overflow: hidden;
 }
 
@@ -22,35 +21,76 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
+    overflow: hidden;
 }
 
 .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
+    color: white;
 }
 
-#logo {
-    width: 150px;
-    height: 150px;
-    animation: rotateLogo 3s infinite linear;
+/* Animation des boîtes */
+.box {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background-color: #4CAF50;
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
+/* Animation des différentes boîtes */
+.box1 {
+    animation-delay: 0s;
+}
+
+.box2 {
+    animation-delay: 0.3s;
+}
+
+.box3 {
+    animation-delay: 0.6s;
+}
+
+.box4 {
+    animation-delay: 0.9s;
+}
+
+/* Animation de rebond des boîtes */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        background-color: #4CAF50;
+    }
+    50% {
+        transform: translateY(-30px);
+        background-color: #FF9800;
+    }
+}
+
+/* Texte de chargement */
 .loading-text {
+    font-size: 20px;
     margin-top: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+    animation: fadeIn 2s infinite alternate;
 }
 
-/* Animation de rotation du logo */
-@keyframes rotateLogo {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* Animation du texte "Chargement..." */
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-/* Contenu principal après le chargement */
+/* Contenu principal (réseau social) */
 #main-content {
     display: flex;
     justify-content: center;
@@ -58,9 +98,12 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 50px;
+    color: #fff;
 }
 
+/* Contenu principal après le chargement */
 h1 {
     font-size: 32px;
-    color: #4CAF50;
+    color: #FF9800;
+    font-weight: bold;
 }
