@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réseau Social - Accueil</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Mon Réseau Social</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Vérification de la connexion de l'utilisateur -->
-    <div id="welcome-message">
-        <h1>Bienvenue sur notre Réseau Social !</h1>
-        <p>Connectez-vous pour commencer à interagir avec les autres utilisateurs.</p>
-        <button onclick="redirectToLogin()">Se connecter</button>
+  <!-- Interface principale façon Discord -->
+  <div class="app-layout">
+
+    <!-- Colonnes -->
+    <div class="sidebar-servers">
+      <div class="server-icon">🏠</div>
+      <div class="server-icon">🎮</div>
+      <div class="server-icon">📚</div>
     </div>
 
-    <!-- Contenu principal, visible seulement si l'utilisateur est connecté -->
-    <div id="content" style="display:none;">
-        <div class="sidebar">
-            <h3>Menu</h3>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Profil</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Déconnexion</a></li>
-            </ul>
-        </div>
-
-        <div class="main-content">
-            <h2>Publications récentes</h2>
-            <div class="post">
-                <h3>Nom de l'utilisateur</h3>
-                <p>Voici un message du réseau social...</p>
-            </div>
-            <div class="post">
-                <h3>Nom de l'utilisateur</h3>
-                <p>Voici un autre message du réseau social...</p>
-            </div>
-        </div>
+    <div class="sidebar-channels">
+      <h3>Salons</h3>
+      <ul>
+        <li># général</li>
+        <li># entraide</li>
+        <li># vocal</li>
+      </ul>
     </div>
 
-    <script src="script.js"></script>
+    <div class="main-chat">
+      <div class="chat-header"># général</div>
+      <div class="chat-messages">
+        <div class="message"><strong>Alice</strong> : Salut tout le monde !</div>
+        <div class="message"><strong>Bob</strong> : Yo 👋</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Envoyer un message...">
+      </div>
+    </div>
+
+    <div class="user-list">
+      <h4>En ligne</h4>
+      <p>👤 Alice</p>
+      <p>👤 Bob</p>
+    </div>
+
+  </div>
+
+  <!-- Overlay login si pas connecté -->
+  <div id="login-overlay" class="login-overlay">
+    <div class="login-box">
+      <h2>Connexion</h2>
+      <input type="text" placeholder="Nom d'utilisateur">
+      <input type="password" placeholder="Mot de passe">
+      <button>Se connecter</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
