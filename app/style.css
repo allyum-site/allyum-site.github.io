@@ -1,118 +1,140 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f2f6;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #36393f;
+  color: white;
 }
 
-h1, h2, h3 {
-    color: #2f3640;
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
-#content, .login-container {
-    width: 60%;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Serveurs */
+.sidebar-servers {
+  width: 70px;
+  background-color: #202225;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
 }
 
-#content {
-    display: none; /* Masqué par défaut, visible quand l'utilisateur est connecté */
+.server-icon {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0;
+  background-color: #5865f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-#welcome-message {
-    text-align: center;
+/* Channels */
+.sidebar-channels {
+  width: 200px;
+  background-color: #2f3136;
+  padding: 10px;
 }
 
-button {
-    background-color: #00aaff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.sidebar-channels h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-button:hover {
-    background-color: #0077cc;
+.sidebar-channels ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* Sidebar styles */
-.sidebar {
-    width: 20%;
-    float: left;
-    background-color: #2f3640;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin-right: 20px;
+.sidebar-channels li {
+  margin: 8px 0;
+  cursor: pointer;
 }
 
-.sidebar h3 {
-    text-align: center;
+/* Chat */
+.main-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #36393f;
 }
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
+.chat-header {
+  padding: 15px;
+  border-bottom: 1px solid #2f3136;
+  font-weight: bold;
 }
 
-.sidebar ul li {
-    margin: 10px 0;
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
 }
 
-.sidebar ul li a {
-    color: #dfe4ea;
-    text-decoration: none;
+.chat-input {
+  padding: 15px;
+  border-top: 1px solid #2f3136;
 }
 
-.sidebar ul li a:hover {
-    color: #ffffff;
+.chat-input input {
+  width: 100%;
+  padding: 10px;
+  background-color: #40444b;
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
 
-/* Main content */
-.main-content {
-    width: 75%;
-    float: left;
+/* Users */
+.user-list {
+  width: 180px;
+  background-color: #2f3136;
+  padding: 10px;
 }
 
-.post {
-    background-color: #f8f9fa;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+/* Login overlay */
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
-.login-container {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.login-box {
+  background: white;
+  color: black;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00000055;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
 }
 
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.login-box input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-button[type="submit"] {
-    width: 100%;
-    background-color: #00aaff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0077cc;
+.login-box button {
+  padding: 10px;
+  background-color: #5865f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
