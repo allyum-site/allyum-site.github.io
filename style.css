@@ -44,24 +44,31 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Animation du logo en cercle */
+/* Logo animé avec un effet de "zoom" */
 .circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 10px solid #fff;
-    border-top: 10px solid #ff0044;
-    animation: spin 2s linear infinite;
+    background-color: #fff;
+    border: 5px solid #ff0044;
+    animation: logoZoom 2s ease-in-out infinite, spin 3s linear infinite;
     margin-bottom: 20px;
 }
 
-/* Animation de rotation */
+/* Zoom animé du logo */
+@keyframes logoZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Animation de rotation pour le logo */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* Animation des boîtes aléatoires qui flottent */
+/* Animation des boîtes flottantes (position aléatoire) */
 @keyframes boxAnimation {
     0% {
         transform: translate(0, 0);
@@ -73,7 +80,7 @@ body {
     }
 }
 
-/* Boîtes flottantes et animées */
+/* Boîtes animées qui flottent partout */
 .box {
     position: absolute;
     width: 50px;
@@ -84,48 +91,7 @@ body {
     opacity: 0;
 }
 
-.box1 { animation-delay: 0s; }
-.box2 { animation-delay: 1s; }
-.box3 { animation-delay: 2s; }
-.box4 { animation-delay: 3s; }
-
-/* Texte de chargement animé */
-.loading-text {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-    color: white;
-    letter-spacing: 1px;
-    animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
-}
-
-/* Effet machine à écrire */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 25em; }
-}
-
-/* Clignotement du texte */
-@keyframes blink {
-    50% { opacity: 0; }
-}
-
-/* Animation du texte "Bienvenue sur mon réseau" */
-.welcome-text {
-    font-size: 30px;
-    color: #FF9800;
-    font-weight: bold;
-    animation: fadeInText 3s ease-out;
-    opacity: 0;
-}
-
-/* Effet d'apparition du texte */
-@keyframes fadeInText {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Contenu principal */
+/* Style pour le fond dynamique */
 #main-content {
     display: flex;
     justify-content: center;
@@ -136,16 +102,6 @@ body {
     color: #fff;
 }
 
-/* Positionnement aléatoire des boîtes */
-.box {
-    position: absolute;
-    top: calc(50% - 25px);
-    left: calc(50% - 25px);
-    --randomX: calc(-100 + (Math.random() * 200))px; /* Déplacement X aléatoire */
-    --randomY: calc(-100 + (Math.random() * 200))px; /* Déplacement Y aléatoire */
-}
-
-h1 {
     font-size: 32px;
     color: #FF9800;
     font-weight: bold;
