@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f2f6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #2f3640;
+}
+
+#content, .login-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+    display: none; /* Masqué par défaut, visible quand l'utilisateur est connecté */
+}
+
+#welcome-message {
+    text-align: center;
+}
+
+button {
+    background-color: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0077cc;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 20%;
+    float: left;
+    background-color: #2f3640;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.sidebar h3 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #dfe4ea;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff;
+}
+
+/* Main content */
+.main-content {
+    width: 75%;
+    float: left;
+}
+
+.post {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #00aaff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0077cc;
+}
