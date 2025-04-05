@@ -29,4 +29,3 @@ function generateRandomBoxes(numBoxes) {
 
 // Générer 15 boîtes animées
 generateRandomBoxes(15);
-
