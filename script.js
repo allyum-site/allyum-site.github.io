@@ -1,4 +1,4 @@
-// Fonction pour générer un nombre aléatoire entre 3 et 15 secondes
+// Fonction pour générer un temps de chargement aléatoire entre 3 et 15 secondes
 function getRandomTime() {
     return Math.floor(Math.random() * (15000 - 3000 + 1)) + 3000; // Entre 3000ms (3s) et 15000ms (15s)
 }
@@ -8,14 +8,14 @@ setTimeout(function() {
     // Masquer l'écran de chargement
     document.getElementById('loader-container').style.display = 'none';
     
-    // Afficher le contenu du réseau social
+    // Afficher le contenu principal
     document.getElementById('main-content').style.display = 'block';
     
-    // Rediriger vers /app/index.html après un certain temps (si nécessaire)
-    // window.location.href = '/app/index.html'; 
+    // Rediriger vers /app/index.html après un certain temps
+    window.location.href = '/app/index.html'; 
 }, getRandomTime());
 
-// Générer des boîtes animées de manière aléatoire
+// Générer des boîtes animées de manière aléatoire sur l'écran
 function generateRandomBoxes(numBoxes) {
     for (let i = 0; i < numBoxes; i++) {
         let box = document.createElement('div');
@@ -27,5 +27,6 @@ function generateRandomBoxes(numBoxes) {
     }
 }
 
-// Générer 10 boîtes animées
-generateRandomBoxes(10);
+// Générer 15 boîtes animées
+generateRandomBoxes(15);
+
