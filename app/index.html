@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réseau Social - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Vérification de la connexion de l'utilisateur -->
+    <div id="welcome-message">
+        <h1>Bienvenue sur notre Réseau Social !</h1>
+        <p>Connectez-vous pour commencer à interagir avec les autres utilisateurs.</p>
+        <button onclick="redirectToLogin()">Se connecter</button>
+    </div>
+
+    <!-- Contenu principal, visible seulement si l'utilisateur est connecté -->
+    <div id="content" style="display:none;">
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Déconnexion</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h2>Publications récentes</h2>
+            <div class="post">
+                <h3>Nom de l'utilisateur</h3>
+                <p>Voici un message du réseau social...</p>
+            </div>
+            <div class="post">
+                <h3>Nom de l'utilisateur</h3>
+                <p>Voici un autre message du réseau social...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
