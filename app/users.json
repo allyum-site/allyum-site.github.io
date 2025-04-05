@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "password": "admin123",
+    "role": "admin",
+    "banned": false,
+    "excluded": false
+  },
+  "bob": {
+    "password": "bobpass",
+    "role": "user",
+    "banned": false,
+    "excluded": false
+  }
+}
